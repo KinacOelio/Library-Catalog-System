@@ -9,6 +9,6 @@ package edu.wmich.cs1120.la3.nbrackenbury;
  *
  * @author natoast
  */
-public class Book {
+public class Book extends LibraryItem{
     
 }
