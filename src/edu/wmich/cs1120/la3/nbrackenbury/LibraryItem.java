@@ -11,6 +11,12 @@ private String callNumber = "null";
 private GregorianCalendar dateChecked;
 private GregorianCalendar dateDue;
 
+public LibraryItem(String itemString)
+{
+  String[] fields = itemString.split(",");
+  this.callNumber = fields[1];  
+}
+
 //see interface for method documentation 
 
 @Override
@@ -48,11 +54,6 @@ public void setDateDue(GregorianCalendar dateDue){
           + "indicates that the object is not calling the "
           + "relevant method for either .Book or .Periodical");  
 }
-
-
-
-
-
 
     
 }//end LibraryItem class

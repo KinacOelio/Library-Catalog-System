@@ -8,14 +8,18 @@ import java.util.Scanner;
 
 public class Controller implements IController{
 
-private ILibrary[] items;
-private char[] itemType;
+private LibraryItem[] items;
+private int nBooks;
+private int nPeriodicals;
+private Scanner keyboard2;
+
+public Controller(Scanner keyboard){this.keyboard2 = keyboard;}
 
 //see interface for methods descriptions
 
 @Override
 public void displayCollection(){
-    for(ILibrary item : items)
+    for(LibraryItem item : items)
     {
         item.toString();       
     }
@@ -23,7 +27,7 @@ public void displayCollection(){
     
 @Override
 public void checkoutMaterials(){
-    Scanner keyboard2 = new Scanner(System.in);
+   
     System.out.print("Enter the call number: ");
     String response2 = keyboard2.nextLine(); 
     
@@ -42,10 +46,9 @@ public void checkoutMaterials(){
 @Override
 public ILibrary findItem(String callNumber)
 {
-  for(ILibrary item : items)  
+  for(LibraryItem item : items)  
   {
-      if (item.getCallNumber().equals(callNumber)){return item;}
-      
+      if (item.getCallNumber().equals(callNumber)){return item;}   
   }  
   return items[0];  
 }//end fintItem
@@ -56,23 +59,26 @@ public void showMenu(){
                   + "1) Display collection\n"
                   + "2) Check out materials\n"
                   + "3) Quit\n"
-                  + "------------------------------\n");   
+                  + "--------------------------------\n"
+                  + "Please choose an option: ");   
 }//end showMenu
 
 @Override
 public void readInput(String fileName) throws IOException{
+ 
   File libraryItems = new File("input.txt"); 
-  Scanner itemsScanner = new Scanner(libraryItems);
-  
-    
+  Scanner itemScanner = new Scanner(libraryItems);
+  nBooks = Integer.parseInt(itemScanner.nextLine());
+  nPeriodicals = Integer.parseInt(itemScanner.nextLine());
+  items = new LibraryItem[nBooks + nPeriodicals + 1];
+  for(int i = 1; i < items.length; i++)
+  {
+    String itemString = itemScanner.nextLine();
+    if(itemString.charAt(0) == 'B'){ items[i] = new Book(itemString);}
+    else if (itemString.charAt(0) == 'P'){ items[i] = new Periodical(itemString);}  
+  }
+  items[0] = new LibraryItem("null,null");
+}
 }
 
-    
-    
-    
-    
-    
-    
-    
-    
-}
+   

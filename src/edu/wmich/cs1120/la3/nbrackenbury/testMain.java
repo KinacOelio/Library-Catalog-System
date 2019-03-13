@@ -1,12 +1,13 @@
 
 package edu.wmich.cs1120.la3.nbrackenbury;
 
+import java.io.IOException;
 import java.util.GregorianCalendar;  
 import java.util.Scanner;
 
 public class testMain {
    
-public static void main(String[] args) throws InterruptedException {
+public static void main(String[] args) throws InterruptedException, IOException {
 
 	Scanner keyboard = new Scanner(System.in);
         IController control = new Controller(keyboard);
@@ -15,7 +16,7 @@ public static void main(String[] args) throws InterruptedException {
         boolean quitFlag = false; 
                  while (!quitFlag)
                  {             
-                     control.showMenu();             
+                 control.showMenu();             
                  response = keyboard.nextLine();             
                  System.out.println();  
                  

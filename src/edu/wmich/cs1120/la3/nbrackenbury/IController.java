@@ -18,7 +18,7 @@ public interface IController {
         * that has been checked out.  
  	 */ 
  	public void checkoutMaterials(); 
- 	 
+ 	
  	/** 
 *	Searches in both the array of books and the array of periodicals   	 
         * for the book with the call number received as a parameter.  	 * 
