@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edu.wmich.cs1120.la3.nbrackenbury;
+
+import java.io.IOException;
 
 
 public interface IController {
@@ -15,12 +13,17 @@ public interface IController {
  	 
  	/** 
 *	Requests for the call number from the user, uses the findItem() 
-*	method to check if that item exists in the library, and if it does   	 * calls the checkOut() method for that item and prints out the item   	 * that has been checked out.  
+*	method to check if that item exists in the library, and if it does   	 
+        * calls the checkOut() method for that item and prints out the item   	 * 
+        * that has been checked out.  
  	 */ 
  	public void checkoutMaterials(); 
  	 
  	/** 
-*	Searches in both the array of books and the array of periodicals   	 * for the book with the call number received as a parameter.  	 * @param callNum The call number of the item requested by the user  	 * @return The requested item, or 'null' if item does not exist. 
+*	Searches in both the array of books and the array of periodicals   	 
+        * for the book with the call number received as a parameter.  	 * 
+        * @param callNum The call number of the item requested by the user  	 
+        * @return The requested item, or 'null' if item does not exist. 
  	 */ 
  	public ILibrary findItem(String callNum); 
  	 
@@ -30,7 +33,8 @@ public interface IController {
  	public void showMenu(); 
  	 
  	/** 
-*	Reads data from the input file and stores the items in the   	 * appropriate array.  
+*	Reads data from the input file and stores the items in the   	 
+*       appropriate array.  
 *	@param fileName The name of the input file. 
 *	@throws IOException Included in case input file is not found. 
  	 */ 

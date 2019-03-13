@@ -2,12 +2,12 @@
 package edu.wmich.cs1120.la3.nbrackenbury;
 
 import java.util.GregorianCalendar;  
+import java.util.Scanner;
 
 public class testMain {
    
-public static void main(String[] args) {
+public static void main(String[] args) throws InterruptedException {
 
-    
 	Scanner keyboard = new Scanner(System.in);
         IController control = new Controller(keyboard);
         control.readInput("input.txt"); 

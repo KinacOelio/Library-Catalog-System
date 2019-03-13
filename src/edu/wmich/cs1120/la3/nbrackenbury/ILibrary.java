@@ -5,15 +5,18 @@ package edu.wmich.cs1120.la3.nbrackenbury;
 import java.util.GregorianCalendar; 
 
 public interface ILibrary {
-  
+
 /** 
-*	Sets the boolean value checkedOut to true, and   	 * initializes the dateChecked out attribute (a   	 * GregorianCalendar object). 
+*	Sets the boolean value checkedOut to true, and   	 
+* initializes the dateChecked out attribute (a 
+* GregorianCalendar object). 
  	 */ 
  	public void checkOut(); 
      
  	/** 
 *	Generates a string with the details of the library item  
-*	whose call number has been input by the user (see example output)  	 * and returns that string. 
+*	whose call number has been input by the user (see example output)  	 
+*       and returns that string. 
 *	If the user wants to check out the library item, the string to be  
 *	returned also includes information that the item has been checked out,  
 *	the date it was checked out, and the due date by which the item should be returned.  
