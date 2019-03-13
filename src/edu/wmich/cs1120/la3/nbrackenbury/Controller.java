@@ -19,10 +19,13 @@ public Controller(Scanner keyboard){this.keyboard2 = keyboard;}
 
 @Override
 public void displayCollection(){
-    for(LibraryItem item : items)
-    {
-        item.toString();       
+    for(int i = 0; i < items.length; i++){
+        items[i].toString();
+        
     }
+    
+    
+    
 }//end displayCollection
     
 @Override

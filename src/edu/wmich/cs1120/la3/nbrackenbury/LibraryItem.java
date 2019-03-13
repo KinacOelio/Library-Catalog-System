@@ -13,6 +13,7 @@ private GregorianCalendar dateDue;
 
 public LibraryItem(String itemString)
 {
+  this.dateChecked = (GregorianCalendar)GregorianCalendar.getInstance();
   String[] fields = itemString.split(",");
   this.callNumber = fields[1];  
 }
