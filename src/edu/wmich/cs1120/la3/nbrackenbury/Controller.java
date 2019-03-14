@@ -19,13 +19,9 @@ public Controller(Scanner keyboard){this.keyboard2 = keyboard;}
 
 @Override
 public void displayCollection(){
-    for(int i = 0; i < items.length; i++){
-        items[i].toString();
-        
+    for(LibraryItem item : items){
+        System.out.println(item.toString());       
     }
-    
-    
-    
 }//end displayCollection
     
 @Override
@@ -38,12 +34,18 @@ public void checkoutMaterials(){
     if(!item.getCallNumber().equals("null") && !item.isCheckedOut())
     {
       item.checkOut();
-      item.toString();
+      System.out.println(item.toString());
+      System.out.printf("Date Checked out: %tD\nDate due: %tD\n\n"
+                        , item.getDateCheckedOut(), item.getDateDue()); 
     }
-    else
-    {
-      System.out.println("Item is not available");
-    }   
+    else if(!item.getCallNumber().equals("null") && item.isCheckedOut())
+    { 
+      System.out.println("--Item is already checked out!--");
+      System.out.println(item.toString());
+      System.out.printf("Date Checked out: %tD\nDate due: %tD\n\n"
+                        , item.getDateCheckedOut(), item.getDateDue()); 
+    }
+    else{System.out.println("Item does not exist");}
 }//end checkoutMaterials
 
 @Override

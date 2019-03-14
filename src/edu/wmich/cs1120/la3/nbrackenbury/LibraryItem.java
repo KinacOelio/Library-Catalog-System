@@ -27,11 +27,9 @@ public void checkOut()
     dateChecked.setTime(dateChecked.getTime()); 
 }
 
+@Override
 public String toString()
 {
-    System.out.println("this method (LibraryItem.toString) "
-            + "indicates that the object is not calling the "
-            + "relevant method for either .Book or .Periodical");
     return "";
 }
 

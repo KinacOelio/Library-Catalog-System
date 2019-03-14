@@ -10,6 +10,7 @@ public class Book extends LibraryItem{
  private String author;
  private String genre;
  private GregorianCalendar dueDate;
+
  
     
     
@@ -20,8 +21,9 @@ public class Book extends LibraryItem{
     this.title = fields[2];
     this.author = fields[3];
     this.genre = fields[4];
-    this.dueDate = (GregorianCalendar)this.getDateCheckedOut().clone();
-    this.dueDate.add(Calendar.DAY_OF_YEAR, 21); 
+    GregorianCalendar dueDate = (GregorianCalendar)this.getDateCheckedOut().clone();
+    dueDate.add(Calendar.DAY_OF_YEAR, 21); 
+    setDateDue(dueDate);
  }
  
  @Override
@@ -30,23 +32,21 @@ public class Book extends LibraryItem{
                     + "Author: %s\n"
                     + "Genre: %s\n"
                     + "Call number: %s\n"
-                    + "Ckecked out: %b",
+                    + "Checked out: %b\n",
                       title, author, genre, this.getCallNumber(),this.isCheckedOut()
                      );
-}
+}//end toString
  
  @Override
  public GregorianCalendar getDateDue(){
- 
- return this.getDateCheckedOut();
-
+ return this.dueDate;
  }
 
     
  @Override
  public void setDateDue(GregorianCalendar dateDue)
  {
- 
+ this.dueDate = dateDue;
  }
 
    
